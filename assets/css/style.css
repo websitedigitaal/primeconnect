@@ -414,7 +414,7 @@ h1, h2, h3 { margin: 0; font-family: var(--f-display); font-weight: 650; font-va
 /* ---------- Footer ---------- */
 
 .site-footer { padding-top: clamp(64px, 8vw, 120px); border-top: 1px solid var(--line-dark); font-size: 15px; overflow: hidden; }
-.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; }
 .footer-logo { height: 60px; width: auto; margin-bottom: 24px; }
 .footer-statement p { max-width: 24em; color: var(--on-dark-soft); }
 .footer-col { display: flex; flex-direction: column; gap: 10px; }
@@ -423,7 +423,7 @@ h1, h2, h3 { margin: 0; font-family: var(--f-display); font-weight: 650; font-va
 .footer-col a:hover { color: var(--signal); }
 .footer-word {
   margin: clamp(56px, 8vw, 120px) 0 0;
-  font: 800 clamp(40px, 9vw, 150px)/.8 var(--f-display); font-variation-settings: "wdth" 120;
+  font: 800 min(9vw, 112px)/.8 var(--f-display); font-variation-settings: "wdth" 120;
   letter-spacing: -.05em; text-align: center;
   color: transparent; -webkit-text-stroke: 1px rgba(185, 211, 219, .22);
   user-select: none;
@@ -532,8 +532,9 @@ h1, h2, h3 { margin: 0; font-family: var(--f-display); font-weight: 650; font-va
 
 .about-hero { padding-bottom: 0; }
 .team-photo { position: relative; margin: clamp(48px, 6vw, 96px) 0 0; }
-.team-photo .parallax { height: clamp(380px, 72vh, 860px); }
-.team-photo img { object-position: center 35%; }
+.team-photo .parallax { aspect-ratio: 2 / 1; }
+/* geen parallax-zoom: anders vallen de bovenste hoofden buiten beeld */
+.team-photo .parallax img { transform: none; object-position: center 2%; }
 .about-intro { padding: var(--section) 0 clamp(64px, 8vw, 120px); }
 .about-intro-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: clamp(40px, 6vw, 120px); align-items: end; }
 .about-intro .statement-text { margin-bottom: 0; max-width: 18ch; }
@@ -714,6 +715,7 @@ h1, h2, h3 { margin: 0; font-family: var(--f-display); font-weight: 650; font-va
   .pillar-text { opacity: 1; transform: none; }
   .card-text { max-height: 7em; opacity: 1; margin-top: 10px; }
   .pd-facts, .philo-side { position: static; }
+  .team-photo .parallax { aspect-ratio: 4 / 3; }
   .roots { grid-template-columns: 1fr; }
   .gallery.g2 { grid-template-columns: 1fr; }
   .pd-hero-media img[data-fit="contain"] { padding: 96px 12% 34vh; object-position: center top; }
