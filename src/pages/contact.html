@@ -1,0 +1,82 @@
+---
+title: Contact – PrimeConnect
+description: Neem contact op met PrimeConnect voor vragen, samenwerkingen of een vraagstuk in hardware, embedded software of systeemontwikkeling.
+nav: contact
+body_class: page-contact
+---
+{% include head %}
+{% include header %}
+
+<section class="page-hero contact-hero" data-theme="dark">
+  <div class="pixel-field" data-pixels="page" aria-hidden="true"></div>
+  <div class="wrap page-hero-inner">
+    <p class="label"><span class="sq"></span>Contact</p>
+    <h1 class="page-title">
+      <span class="line"><span>Laten we</span></span>
+      <span class="line"><span class="accent">verbinden.</span></span>
+    </h1>
+  </div>
+</section>
+
+<section class="contact-main" data-theme="light">
+  <div class="wrap contact-grid">
+    <div class="contact-info">
+      <p class="contact-intro reveal">Voor vragen, samenwerkingen of andere verzoeken kunt u onderstaand formulier invullen. Wij nemen zo spoedig mogelijk contact met u op.</p>
+
+      <a class="contact-big reveal" href="mailto:peter@primeconnect.nl">
+        <span class="label">E-mail</span>
+        <span class="contact-big-value">peter@primeconnect.nl</span>
+      </a>
+
+      <div class="office reveal">
+        <img src="assets/img/gasfabriek.webp" alt="De Gasfabriek aan de Zutphenseweg in Deventer" loading="lazy">
+        <div class="office-body">
+          <span class="label">Kantoor</span>
+          <address>De Gasfabriek<br>Zutphenseweg 6a<br>7418 AJ Deventer</address>
+          <a class="link-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Zutphenseweg+6a+7418+AJ+Deventer" target="_blank" rel="noopener">Route plannen <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </div>
+
+    <form class="form reveal" id="contact-form" novalidate>
+      <div class="field">
+        <input id="f-name" name="naam" type="text" autocomplete="name" placeholder=" " required>
+        <label for="f-name">Naam</label>
+      </div>
+      <div class="field">
+        <input id="f-company" name="bedrijf" type="text" autocomplete="organization" placeholder=" ">
+        <label for="f-company">Bedrijf <em>(optioneel)</em></label>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <input id="f-email" name="email" type="email" autocomplete="email" placeholder=" " required>
+          <label for="f-email">E-mailadres</label>
+        </div>
+        <div class="field">
+          <input id="f-phone" name="telefoon" type="tel" autocomplete="tel" placeholder=" ">
+          <label for="f-phone">Telefoon <em>(optioneel)</em></label>
+        </div>
+      </div>
+      <fieldset class="topics">
+        <legend>Waar gaat het over?</legend>
+        <label><input type="checkbox" name="onderwerp" value="Hardware"><span>Hardware</span></label>
+        <label><input type="checkbox" name="onderwerp" value="Software"><span>Software</span></label>
+        <label><input type="checkbox" name="onderwerp" value="Fysica"><span>Fysica</span></label>
+        <label><input type="checkbox" name="onderwerp" value="Samenwerking"><span>Samenwerking</span></label>
+        <label><input type="checkbox" name="onderwerp" value="Anders"><span>Anders</span></label>
+      </fieldset>
+      <div class="field">
+        <textarea id="f-msg" name="bericht" rows="5" placeholder=" " required></textarea>
+        <label for="f-msg">Uw bericht</label>
+      </div>
+      <button class="btn btn-primary btn-wide" type="submit">Versturen</button>
+      <p class="form-status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<section class="contact-band" data-theme="dark">
+  <div class="parallax"><img src="assets/img/raam-logo.webp" alt="" loading="lazy"></div>
+</section>
+
+{% include footer %}

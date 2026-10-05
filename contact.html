@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact – PrimeConnect</title>
+  <meta name="description" content="Neem contact op met PrimeConnect voor vragen, samenwerkingen of een vraagstuk in hardware, embedded software of systeemontwikkeling.">
+  <meta name="theme-color" content="#050f16">
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="page-contact">
+
+<a class="skip" href="#main">Naar inhoud</a>
+<header class="site-header" id="top">
+  <div class="wrap header-inner">
+    <a href="index.html" class="brand" aria-label="PrimeConnect home">
+      <img class="brand-light" src="assets/img/logo-white.png" alt="PrimeConnect" width="894" height="490">
+      <img class="brand-dark" src="assets/img/logo.png" alt="" width="894" height="490">
+    </a>
+    <nav class="nav" id="nav" aria-label="Hoofdmenu">
+      <a href="index.html" data-nav="home"><span class="nav-idx">01</span>Home</a>
+      <a href="projecten.html" data-nav="projecten"><span class="nav-idx">02</span>Projecten</a>
+      <a href="over-ons.html" data-nav="over-ons"><span class="nav-idx">03</span>Over ons</a>
+      <a href="contact.html" data-nav="contact" aria-current="page" aria-current="page" class="nav-cta"><span class="nav-idx">04</span>Contact</a>
+    </nav>
+    <button class="nav-toggle" aria-controls="nav" aria-expanded="false" aria-label="Menu openen">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+<main id="main">
+
+
+<section class="page-hero contact-hero" data-theme="dark">
+  <div class="pixel-field" data-pixels="page" aria-hidden="true"></div>
+  <div class="wrap page-hero-inner">
+    <p class="label"><span class="sq"></span>Contact</p>
+    <h1 class="page-title">
+      <span class="line"><span>Laten we</span></span>
+      <span class="line"><span class="accent">verbinden.</span></span>
+    </h1>
+  </div>
+</section>
+
+<section class="contact-main" data-theme="light">
+  <div class="wrap contact-grid">
+    <div class="contact-info">
+      <p class="contact-intro reveal">Voor vragen, samenwerkingen of andere verzoeken kunt u onderstaand formulier invullen. Wij nemen zo spoedig mogelijk contact met u op.</p>
+
+      <a class="contact-big reveal" href="mailto:peter@primeconnect.nl">
+        <span class="label">E-mail</span>
+        <span class="contact-big-value">peter@primeconnect.nl</span>
+      </a>
+
+      <div class="office reveal">
+        <img src="assets/img/gasfabriek.webp" alt="De Gasfabriek aan de Zutphenseweg in Deventer" loading="lazy">
+        <div class="office-body">
+          <span class="label">Kantoor</span>
+          <address>De Gasfabriek<br>Zutphenseweg 6a<br>7418 AJ Deventer</address>
+          <a class="link-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Zutphenseweg+6a+7418+AJ+Deventer" target="_blank" rel="noopener">Route plannen <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </div>
+
+    <form class="form reveal" id="contact-form" novalidate>
+      <div class="field">
+        <input id="f-name" name="naam" type="text" autocomplete="name" placeholder=" " required>
+        <label for="f-name">Naam</label>
+      </div>
+      <div class="field">
+        <input id="f-company" name="bedrijf" type="text" autocomplete="organization" placeholder=" ">
+        <label for="f-company">Bedrijf <em>(optioneel)</em></label>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <input id="f-email" name="email" type="email" autocomplete="email" placeholder=" " required>
+          <label for="f-email">E-mailadres</label>
+        </div>
+        <div class="field">
+          <input id="f-phone" name="telefoon" type="tel" autocomplete="tel" placeholder=" ">
+          <label for="f-phone">Telefoon <em>(optioneel)</em></label>
+        </div>
+      </div>
+      <fieldset class="topics">
+        <legend>Waar gaat het over?</legend>
+        <label><input type="checkbox" name="onderwerp" value="Hardware"><span>Hardware</span></label>
+        <label><input type="checkbox" name="onderwerp" value="Software"><span>Software</span></label>
+        <label><input type="checkbox" name="onderwerp" value="Fysica"><span>Fysica</span></label>
+        <label><input type="checkbox" name="onderwerp" value="Samenwerking"><span>Samenwerking</span></label>
+        <label><input type="checkbox" name="onderwerp" value="Anders"><span>Anders</span></label>
+      </fieldset>
+      <div class="field">
+        <textarea id="f-msg" name="bericht" rows="5" placeholder=" " required></textarea>
+        <label for="f-msg">Uw bericht</label>
+      </div>
+      <button class="btn btn-primary btn-wide" type="submit">Versturen</button>
+      <p class="form-status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<section class="contact-band" data-theme="dark">
+  <div class="parallax"><img src="assets/img/raam-logo.webp" alt="" loading="lazy"></div>
+</section>
+
+</main>
+<footer class="site-footer" data-theme="dark">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-statement">
+        <img src="assets/img/logo-white.png" alt="PrimeConnect" class="footer-logo" width="894" height="490">
+        <p>Complete embedded systemen voor de fysieke wereld. Ontworpen, gebouwd en getest in Deventer.</p>
+      </div>
+      <nav class="footer-col" aria-label="Footer">
+        <p class="label">Navigatie</p>
+        <a href="index.html">Home</a>
+        <a href="projecten.html">Projecten</a>
+        <a href="over-ons.html">Over ons</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="footer-col">
+        <p class="label">Kantoor</p>
+        <address>De Gasfabriek<br>Zutphenseweg 6a<br>7418 AJ Deventer</address>
+        <a href="mailto:peter@primeconnect.nl">peter@primeconnect.nl</a>
+      </div>
+      <div class="footer-col">
+        <p class="label">Zusterbedrijf</p>
+        <a href="https://inversable.com" target="_blank" rel="noopener">Inversable ↗</a>
+        <span class="muted">Cloud &amp; apps</span>
+      </div>
+    </div>
+    <div class="footer-word" aria-hidden="true">PRIMECONNECT</div>
+    <div class="footer-bottom">
+      <span>© 2026 PrimeConnect</span>
+      <span class="muted">2 · 3 · 5 · 7 · 11 · 13</span>
+      <a href="#top">Naar boven ↑</a>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
+

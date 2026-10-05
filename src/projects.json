@@ -1,0 +1,107 @@
+[
+  {
+    "slug": "combinext",
+    "title": "CombiNext",
+    "type": "In-house",
+    "short": "Geïntegreerde oplossing voor volledig elektrische levering van verwarming en warm water, afgestemd op lokaal energiegebruik.",
+    "subtitle": "Geïntegreerde opslag van warmwater en elektriciteit in één compact systeem",
+    "image": "proj-combinext.webp",
+    "image_fit": "contain",
+    "status": "In ontwikkeling · octrooi aangevraagd",
+    "domains": ["Hardware", "Firmware", "HEMS-algoritme"],
+    "body": [
+      "De CombiNext is een apparaat in ontwikkeling dat warmwateropslag en elektriciteitsopslag combineert in één compact systeem, aangestuurd door een geïntegreerd HEMS-algoritme. Het systeem is specifiek gericht op het verwaarden van zonnestroom: opgewekte energie die niet direct wordt verbruikt, wordt optimaal ingezet voor warmwaterbereiding of elektriciteitsopslag, afhankelijk van de actuele en verwachte vraag. Waar bestaande oplossingen een boiler en een thuisbatterij als losse systemen naast elkaar plaatsen, integreert de CombiNext beide functies in één apparaat met een gezamenlijke besturingslaag.",
+      "Doordat alle componenten intern worden ontwikkeld en functioneel op elkaar zijn afgestemd, is een compactheid mogelijk die met losse systemen niet haalbaar is. Bij hoge warmwatervraag kunnen drie bronnen gelijktijdig worden ingezet: de primaire warmtebron, elektrische bijverwarming en de warmwatertank. Door deze gecombineerde inzet kan piekbelasting worden opgevangen zonder dat het vat daarvoor groter hoeft te worden gedimensioneerd. Het systeem blijft hierdoor compact, wat het bij uitstek geschikt maakt voor kleinere woningen zoals rijtjeshuizen en appartementen waar ruimte voor technische installaties beperkt is.",
+      "Het geïntegreerde algoritme combineert voorspellingen van zonneopbrengst, elektrisch verbruik en warmwatergebruik om opslag en afname continu op elkaar af te stemmen. Doordat het algoritme direct gekoppeld is aan de hardware, is nauwkeurigere optimalisatie mogelijk dan bij externe HEMS-koppeling achteraf. De CombiNext biedt daarnaast de mogelijkheid om als congestieverzachter te fungeren, een functie die aansluit op een groeiende vraag vanuit netbeheerders.",
+      "De CombiNext bevindt zich momenteel in de ontwikkelfase. Hardware, firmware en het HEMS-algoritme worden volledig intern bij PrimeConnect ontwikkeld, zonder afhankelijkheid van externe toolchains of gesloten systemen.",
+      "Op het systeemconcept loopt momenteel een octrooiaanvraag."
+    ],
+    "gallery": [
+      {"src": "hardware.webp", "caption": "NextCombi control board — rev 1.0"}
+    ]
+  },
+  {
+    "slug": "physics-computing",
+    "title": "Physics Computing",
+    "type": "Contract R&D",
+    "short": "Fysische aansturing op basis van continue meetdata.",
+    "subtitle": "Fysische aansturing op basis van continue meetdata",
+    "image": "prototypes.webp",
+    "domains": ["Sensoren", "Fysische modellen", "Aansturing"],
+    "body": [
+      "Bij systemen waarin beweging, kracht of stroming een rol spelen, wordt het gedrag niet uitsluitend bepaald door software of elektronica, maar door de fysische eigenschappen van de componenten zelf. Kleine afwijkingen in mechanisch ontwerp of aansturing werken direct door in stabiliteit, nauwkeurigheid en levensduur. In veel toepassingen wordt dit gedrag pas zichtbaar tijdens gebruik, terwijl het in de ontwerpfase al bepalend is.",
+      "PrimeConnect ontwikkelde een systeem waarin meetdata en fysische modellen direct aan elkaar worden gekoppeld. Sensordata over krachten, beweging en stroming wordt continu verwerkt en getoetst aan modellen die het fysisch gedrag van de componenten beschrijven. Dit maakt het mogelijk om afwijkingen niet alleen te detecteren, maar te verklaren vanuit de onderliggende mechanismen. Op basis van deze analyse wordt de aansturing van het systeem bijgestuurd, onder andere via een stappenmotor voor nauwkeurige waterstroomregeling.",
+      "Het resultaat is een systeem waarin meting, modellering en aansturing een gesloten keten vormen. Systeemgedrag wordt voorspelbaar en controleerbaar, ook onder wisselende omstandigheden, zonder overdimensionering of onnodige complexiteit."
+    ],
+    "gallery": []
+  },
+  {
+    "slug": "warmtepomp",
+    "title": "Warmtepomp onderzoeksopstelling",
+    "type": "Contract R&D",
+    "short": "Gecontroleerde testopstelling voor analyse van thermodynamisch gedrag en efficiëntie van warmtepompsystemen.",
+    "subtitle": "Reproduceerbaar meten aan een gesloten thermodynamisch systeem",
+    "image": "proj-warmtepomp.webp",
+    "domains": ["Thermodynamica", "Meet- & regeltechniek", "Open source embedded control"],
+    "body": [
+      "Een warmtepomp is een gesloten thermodynamisch systeem waarin compressor, condensor, expansieventiel en verdamper continu op elkaar inwerken. Het gedrag van dit systeem wordt bepaald door belasting, temperatuurverschillen en stroming. Onder praktijkomstandigheden maken externe variabelen en wisselende belasting gecontroleerde analyse lastig.",
+      "Voor een opdrachtgever die een proefwarmtepomp wilde ontwikkelen en testen, realiseerde PrimeConnect een onderzoeksopstelling waarin deze variabelen beheerst worden. Het retourcircuit voert opgewekte warmte na gecontroleerde afkoeling via een convector terug naar de verdamper, waardoor het systeem continu kan draaien zonder externe warmteafvoer. Flow, vermogen en thermische belasting worden actief gemeten en gestuurd, zodat het systeemgedrag onder verschillende condities reproduceerbaar kan worden bepaald.",
+      "De aansturing is gerealiseerd met open source embedded control, ontwikkeld op de registerindeling en periferie van de gebruikte hardware. De open architectuur maakt directe koppeling aan de systemen van de opdrachtgever mogelijk en laat verdere uitbreiding toe zonder afhankelijkheid van gesloten toolchains.",
+      "Het resultaat is een volledig controleerbare opstelling waarin het thermodynamisch gedrag van de proefwarmtepomp onder gedefinieerde omstandigheden reproduceerbaar kan worden geanalyseerd en gedocumenteerd."
+    ],
+    "gallery": [
+      {"src": "proj-warmtepomp.webp", "caption": "Opstelling met compressor en warmtewisselaars"},
+      {"src": "tile-fysica.webp", "caption": "Retourcircuit, meting en besturingskast"}
+    ]
+  },
+  {
+    "slug": "hems",
+    "title": "Home Energy Management System",
+    "type": "In-house",
+    "short": "Afstemming van energieopwekking en verbruik binnen de woning door middel van voorspelling en centrale aansturing.",
+    "subtitle": "Geïntegreerde energieaansturing voor de elektrificerende woning",
+    "image": "proj-hems.webp",
+    "domains": ["Voorspellingsmodellen", "Energiesystemen", "Aansturing"],
+    "body": [
+      "De elektrificatie van woningen neemt toe. Warmtepompen, laadpalen en zonnepanelen stellen hogere eisen aan de coördinatie van energiestromen binnen een gebouw. Bestaande HEMS-oplossingen benaderen dit primair vanuit de elektrische kant: opwekking en elektrisch verbruik worden op elkaar afgestemd, maar warm water blijft buiten beschouwing. Dit is een beperking, want de energievraag voor warm water is significant en wordt in een volledig geëlektrificeerde woning direct gedragen door het elektriciteitsnet.",
+      "PrimeConnect ontwikkelde een HEMS dat elektrisch verbruik en warmwaterbereiding als één geïntegreerd systeem benadert. Het systeem combineert drie voorspellingsmodules: zonneopbrengst op basis van weerdata en historische patronen, elektrisch verbruik op basis van gebruiksgedrag, en warmwaterverbruik op basis van gedragspatronen van de bewoners. Op basis van deze gecombineerde prognoses stuurt het systeem aangesloten apparaten aan, zodat beschikbare energie op het juiste moment wordt ingezet en piekbelasting op het net wordt beperkt.",
+      "Naarmate de energietransitie vordert en woningen verder elektrificeren, neemt de relevantie van warmwaterintegratie toe. Een HEMS dat alleen de elektrische kant beheert, optimaliseert een deel van het systeem. PrimeConnect optimaliseert het geheel."
+    ],
+    "gallery": [
+      {"src": "hems-grafieken.webp", "caption": "Evaluatie van de online voorspelling van zonneopbrengst", "fit": "contain"}
+    ]
+  },
+  {
+    "slug": "verwarmingssysteem",
+    "title": "Verwarmingssysteem",
+    "type": "Contract R&D",
+    "short": "Aansturing en regeling van vloerverwarming via een geïntegreerd systeem van thermostaat, control unit en actuatoren.",
+    "subtitle": "Van losse componenten naar één geïntegreerd systeem",
+    "image": "proj-verwarming.webp",
+    "domains": ["Thermostaat", "Control unit", "Actuatoren", "Communicatieprotocollen"],
+    "body": [
+      "Voor een partner ontwikkelde PrimeConnect een volledig geïntegreerd verwarmingssysteem bestaande uit een thermostaat, een centrale control unit en actuatoren. In bestaande installaties zijn deze onderdelen doorgaans afkomstig van verschillende leveranciers en gekoppeld via standaardprotocollen. Het systeemgedrag wordt dan bepaald door de interactie tussen componenten waarvan de interne werking niet volledig inzichtelijk is, wat gerichte sturing op prestaties, betrouwbaarheid en uitbreidbaarheid bemoeilijkt.",
+      "In dit project zijn alle onderdelen intern en in samenhang ontwikkeld. De thermostaat meet en registreert temperatuur en is beschikbaar in een bedrade en draadloze variant, afhankelijk van de installatievereisten. De control unit verwerkt de ingangen van alle aangesloten thermostaten en vertaalt deze naar concrete aansturing van de actuatoren per ruimte. De actuatoren zijn ontworpen op bestaande verdelers in de markt en maken gebruik van een stappenmotor, waardoor de doorstroming nauwkeuriger regelbaar is dan met een eenvoudige open/dicht-functionaliteit. Hardware, firmware en communicatieprotocollen zijn voor alle drie de onderdelen intern ontwikkeld, zonder afhankelijkheid van externe leveranciers of gesloten implementaties.",
+      "Het resultaat is een modulair systeem waarin meting, verwerking en aansturing als één geïntegreerd geheel functioneren, volledig inzichtelijk en aanpasbaar op de eisen van de toepassing."
+    ],
+    "extra_title": "Onder de behuizing",
+    "extra_text": "De PCB is het hart van elk product dat we maken. Hier zie je ons werk van dichtbij, zoals het eruitziet vóór het in zijn behuizing verdwijnt.",
+    "gallery": [
+      {"src": "proj-dongle.webp", "caption": "Thermostaat-PCB"}
+    ]
+  },
+  {
+    "slug": "4g-dongle",
+    "title": "4G-dongle",
+    "type": "Contract R&D",
+    "short": "Uitlezen, verwerken en versleuteld verzenden van energiedata via de P1-interface van slimme meters.",
+    "subtitle": "P1-meterdata: uitlezen, verwerken en versleuteld overdragen",
+    "image": "pcb-macro.webp",
+    "domains": ["P1-interface", "4G", "Versleuteling"],
+    "body": [
+      "Elke Nederlandse slimme meter beschikt over een P1-poort die continu energieverbruiksdata uitgeeft. Deze datastroom vereist betrouwbare lokale verwerking voordat de data overdraagbaar is naar externe systemen. Standaardmodules die hiervoor worden ingezet bevatten vaak componenten waarvan de interne werking niet volledig inzichtelijk is, wat de controle over verwerking en beveiliging van de volledige keten beperkt.",
+      "PrimeConnect ontwikkelde een dongle die de P1-datastroom rechtstreeks uitleest, lokaal verwerkt en versleuteld doorstuurt via 4G. Hardware en embedded software zijn intern en in samenhang ontwikkeld, afgestemd op de elektrische eisen van de P1-interface en de beveiligingseisen van de toepassing. De volledige keten van uitlezing tot overdracht wordt afgehandeld binnen één systeem, zonder afhankelijkheid van externe componenten of gesloten toolchains."
+    ],
+    "gallery": []
+  }
+]

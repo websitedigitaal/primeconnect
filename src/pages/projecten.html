@@ -1,0 +1,33 @@
+---
+title: Projecten – PrimeConnect
+description: Projecten van PrimeConnect: geïntegreerde systemen met volledige interne beheersing van hardware en embedded software.
+nav: projecten
+body_class: page-projects
+---
+{% include head %}
+{% include header %}
+
+<section class="page-hero" data-theme="dark">
+  <div class="pixel-field" data-pixels="page" aria-hidden="true"></div>
+  <div class="wrap page-hero-inner">
+    <p class="label"><span class="sq"></span>Onze projecten</p>
+    <h1 class="page-title"><span class="line"><span>Projecten</span></span></h1>
+    <p class="page-lead">PrimeConnect ontwikkelt geïntegreerde systemen met volledige interne beheersing van hardware en embedded software. Onderstaande projecten tonen de technische uitwerking per toepassing.</p>
+  </div>
+</section>
+
+<section class="pj-list-section" data-theme="light">
+  <div class="wrap">
+    <div class="filters" role="group" aria-label="Filter projecten">
+      <button class="filter is-active" data-filter="all" aria-pressed="true">Alle <sup>06</sup></button>
+      <button class="filter" data-filter="In-house" aria-pressed="false">In-house <sup>02</sup></button>
+      <button class="filter" data-filter="Contract R&amp;D" aria-pressed="false">Contract R&amp;D <sup>04</sup></button>
+    </div>
+    <div class="pj-list">
+      {{project_index}}
+    </div>
+  </div>
+</section>
+
+{% include cta %}
+{% include footer %}

@@ -1,0 +1,43 @@
+---
+---
+{% include head %}
+{% include header %}
+
+<section class="pd-hero" data-theme="dark">
+  <div class="pd-hero-media">{{p_hero}}</div>
+  <div class="wrap pd-hero-inner">
+    <a class="back" href="{{root}}projecten.html">← Alle projecten</a>
+    <p class="label"><span class="sq"></span>Project {{p_index}} / {{p_total}} · {{p_type}}</p>
+    <h1 class="pd-title">{{p_title}}</h1>
+    <p class="pd-subtitle">{{p_subtitle}}</p>
+  </div>
+</section>
+
+<section class="pd-content" data-theme="light">
+  <div class="wrap pd-grid">
+    <aside class="pd-facts">
+      <dl>
+        <div><dt>Type</dt><dd>{{p_type}}</dd></div>
+        {{p_status}}
+        <div><dt>Disciplines</dt><dd><ul class="chips">{{p_domains}}</ul></dd></div>
+        <div><dt>Ontwikkeld</dt><dd>Volledig in eigen huis</dd></div>
+      </dl>
+    </aside>
+    <article class="pd-body">
+      {{p_body}}
+    </article>
+  </div>
+</section>
+
+{{p_gallery}}
+
+<a class="pd-next" href="{{root}}projecten/{{next_slug}}.html" data-theme="dark">
+  <span class="pd-next-media">{{next_hero}}</span>
+  <span class="wrap pd-next-inner">
+    <span class="label">Volgend project</span>
+    <span class="pd-next-title">{{next_title}} <i aria-hidden="true">→</i></span>
+  </span>
+</a>
+
+{% include cta %}
+{% include footer %}
