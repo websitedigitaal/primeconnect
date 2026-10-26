@@ -6,10 +6,16 @@
       <img class="brand-dark" src="{{root}}assets/img/logo.png" alt="" width="894" height="490">
     </a>
     <nav class="nav" id="nav" aria-label="Hoofdmenu">
-      <a href="{{root}}index.html" data-nav="home"><span class="nav-idx">01</span>Home</a>
-      <a href="{{root}}projecten.html" data-nav="projecten"><span class="nav-idx">02</span>Projecten</a>
-      <a href="{{root}}over-ons.html" data-nav="over-ons"><span class="nav-idx">03</span>Over ons</a>
-      <a href="{{root}}contact.html" data-nav="contact" class="nav-cta"><span class="nav-idx">04</span>Contact</a>
+      <a href="{{root}}index.html" data-nav="home">Home</a>
+      <a href="{{root}}projecten.html" data-nav="projecten">Projecten</a>
+      <div class="nav-group">
+        <a href="{{root}}over-ons.html" data-nav="over-ons">Over ons</a>
+        <div class="subnav">
+          <a href="{{root}}team.html" data-nav="team">Team</a>
+          <a href="{{root}}filosofie.html" data-nav="filosofie">Filosofie</a>
+        </div>
+      </div>
+      <a href="{{root}}contact.html" data-nav="contact" class="nav-cta">Contact</a>
     </nav>
     <button class="nav-toggle" aria-controls="nav" aria-expanded="false" aria-label="Menu openen">
       <span></span><span></span>

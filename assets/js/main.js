@@ -2,11 +2,10 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
 
 requestAnimationFrame(() => document.body.classList.add('is-loaded'));
 
-/* ---------- Header: kleur per sectie, verbergen bij omlaag scrollen ---------- */
+/* ---------- Header: kleur per sectie ---------- */
 
 const header = document.querySelector('.site-header');
 const themed = [...document.querySelectorAll('main [data-theme], .site-footer')];
-let lastY = window.scrollY;
 
 function updateHeader() {
   const y = window.scrollY;
@@ -17,9 +16,6 @@ function updateHeader() {
   });
   header.classList.toggle('on-light', under?.dataset.theme === 'light');
   header.classList.toggle('is-solid', y > 40);
-  const goingDown = y > lastY && y > 400;
-  if (!document.body.classList.contains('menu-open')) header.classList.toggle('is-hidden', goingDown);
-  lastY = y;
 }
 
 /* ---------- Mobiel menu ---------- */
@@ -194,17 +190,50 @@ const isPrime = (n) => {
   return true;
 };
 
+// Logovariant: 1 t/m 81 in vierkante schillen. Schil k loopt van (k-1)²+1 tot k²:
+// k² in de hoek, de oneven getallen in de bovenrij, de even getallen in de linkerkolom.
+// De priemgetallen vormen samen het logo; DARK_PRIMES zijn de donkerblauwe blokken ervan.
+const DARK_PRIMES = [5, 13, 37, 43, 61, 73];
+const logoNumber = (r, c, size) => {
+  const m = Math.min(r, c);
+  const sq = (size - m) ** 2;
+  const d = Math.max(r, c) - m;
+  if (d === 0) return sq;
+  return sq - 2 * d + ((r === m) === (sq % 2 === 0) ? 1 : 0);
+};
+
 document.querySelectorAll('[data-sieve]').forEach((sieve) => {
+  const logo = sieve.dataset.sieve === 'logo';
+  const numbers = [];
+  if (logo) {
+    for (let r = 0; r < 9; r++) for (let c = 0; c < 9; c++) numbers.push(logoNumber(r, c, 9));
+  } else {
+    for (let n = 1; n <= 100; n++) numbers.push(n);
+  }
   const primes = [];
-  for (let n = 1; n <= 100; n++) {
+  const dark = [];
+  numbers.forEach((n) => {
     const s = document.createElement('span');
     s.textContent = n;
-    if (isPrime(n)) { s.className = 'p'; primes.push(s); } else s.className = 'x';
+    if (isPrime(n)) {
+      s.className = 'p';
+      primes[n] = s;
+      if (logo && DARK_PRIMES.includes(n)) dark.push(s);
+    } else s.className = 'x';
     sieve.appendChild(s);
-  }
-  const light = () => primes.forEach((s, k) => {
-    setTimeout(() => s.classList.add('lit', ...(k % 3 === 2 ? ['ice'] : [])), reduceMotion ? 0 : k * 70);
   });
+  const ordered = primes.filter(Boolean);
+  const step = reduceMotion ? 0 : 70;
+  const light = () => {
+    ordered.forEach((s, k) => {
+      const ice = logo || k % 3 === 2;
+      setTimeout(() => s.classList.add('lit', ...(ice ? ['ice'] : [])), k * step);
+    });
+    if (logo) {
+      const start = ordered.length * step + (reduceMotion ? 0 : 500);
+      dark.forEach((s, k) => setTimeout(() => s.classList.remove('ice'), start + k * step * 2));
+    }
+  };
   new IntersectionObserver((entries, obs) => {
     if (!entries[0].isIntersecting) return;
     light();
@@ -245,7 +274,6 @@ if (form) {
       return;
     }
     const data = new FormData(form);
-    const topics = data.getAll('onderwerp').join(', ');
     const lines = [
       data.get('bericht'),
       '',
@@ -254,8 +282,8 @@ if (form) {
     ];
     if (data.get('telefoon')) lines.push(data.get('telefoon'));
     const body = lines.join('\n');
-    const subject = `Contactaanvraag${topics ? ` — ${topics}` : ''}`;
-    window.location.href = `mailto:peter@primeconnect.nl?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const subject = 'Contactaanvraag';
+    window.location.href = `mailto:info@primeconnect.nl?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     status.textContent = 'Uw e-mailprogramma wordt geopend met het bericht.';
   });
 }

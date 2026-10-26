@@ -22,10 +22,16 @@
       <img class="brand-dark" src="assets/img/logo.png" alt="" width="894" height="490">
     </a>
     <nav class="nav" id="nav" aria-label="Hoofdmenu">
-      <a href="index.html" data-nav="home"><span class="nav-idx">01</span>Home</a>
-      <a href="projecten.html" data-nav="projecten"><span class="nav-idx">02</span>Projecten</a>
-      <a href="over-ons.html" data-nav="over-ons"><span class="nav-idx">03</span>Over ons</a>
-      <a href="contact.html" data-nav="contact" aria-current="page" aria-current="page" class="nav-cta"><span class="nav-idx">04</span>Contact</a>
+      <a href="index.html" data-nav="home">Home</a>
+      <a href="projecten.html" data-nav="projecten">Projecten</a>
+      <div class="nav-group">
+        <a href="over-ons.html" data-nav="over-ons">Over ons</a>
+        <div class="subnav">
+          <a href="team.html" data-nav="team">Team</a>
+          <a href="filosofie.html" data-nav="filosofie">Filosofie</a>
+        </div>
+      </div>
+      <a href="contact.html" data-nav="contact" aria-current="page" aria-current="page" class="nav-cta">Contact</a>
     </nav>
     <button class="nav-toggle" aria-controls="nav" aria-expanded="false" aria-label="Menu openen">
       <span></span><span></span>
@@ -40,8 +46,8 @@
   <div class="wrap page-hero-inner">
     <p class="label"><span class="sq"></span>Contact</p>
     <h1 class="page-title">
-      <span class="line"><span>Laten we</span></span>
-      <span class="line"><span class="accent">verbinden.</span></span>
+      <span class="line"><span>Neem</span></span>
+      <span class="line"><span class="accent">contact op.</span></span>
     </h1>
   </div>
 </section>
@@ -51,9 +57,9 @@
     <div class="contact-info">
       <p class="contact-intro reveal">Voor vragen, samenwerkingen of andere verzoeken kunt u onderstaand formulier invullen. Wij nemen zo spoedig mogelijk contact met u op.</p>
 
-      <a class="contact-big reveal" href="mailto:peter@primeconnect.nl">
+      <a class="contact-big reveal" href="mailto:info@primeconnect.nl">
         <span class="label">E-mail</span>
-        <span class="contact-big-value">peter@primeconnect.nl</span>
+        <span class="contact-big-value">info@primeconnect.nl</span>
       </a>
 
       <div class="office reveal">
@@ -61,7 +67,6 @@
         <div class="office-body">
           <span class="label">Kantoor</span>
           <address>De Gasfabriek<br>Zutphenseweg 6a<br>7418 AJ Deventer</address>
-          <a class="link-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Zutphenseweg+6a+7418+AJ+Deventer" target="_blank" rel="noopener">Route plannen <span aria-hidden="true">↗</span></a>
         </div>
       </div>
     </div>
@@ -85,14 +90,6 @@
           <label for="f-phone">Telefoon <em>(optioneel)</em></label>
         </div>
       </div>
-      <fieldset class="topics">
-        <legend>Waar gaat het over?</legend>
-        <label><input type="checkbox" name="onderwerp" value="Hardware"><span>Hardware</span></label>
-        <label><input type="checkbox" name="onderwerp" value="Software"><span>Software</span></label>
-        <label><input type="checkbox" name="onderwerp" value="Fysica"><span>Fysica</span></label>
-        <label><input type="checkbox" name="onderwerp" value="Samenwerking"><span>Samenwerking</span></label>
-        <label><input type="checkbox" name="onderwerp" value="Anders"><span>Anders</span></label>
-      </fieldset>
       <div class="field">
         <textarea id="f-msg" name="bericht" rows="5" placeholder=" " required></textarea>
         <label for="f-msg">Uw bericht</label>
@@ -120,12 +117,14 @@
         <a href="index.html">Home</a>
         <a href="projecten.html">Projecten</a>
         <a href="over-ons.html">Over ons</a>
+        <a href="team.html">Team</a>
+        <a href="filosofie.html">Filosofie</a>
         <a href="contact.html">Contact</a>
       </nav>
       <div class="footer-col">
         <p class="label">Kantoor</p>
         <address>De Gasfabriek<br>Zutphenseweg 6a<br>7418 AJ Deventer</address>
-        <a href="mailto:peter@primeconnect.nl">peter@primeconnect.nl</a>
+        <a href="mailto:info@primeconnect.nl">info@primeconnect.nl</a>
       </div>
     </div>
     <div class="footer-word" aria-hidden="true">PRIMECONNECT</div>
