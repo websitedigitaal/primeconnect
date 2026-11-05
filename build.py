@@ -22,6 +22,22 @@ def esc(text):
     return html.escape(text, quote=True)
 
 
+# Lange samenstellingen krijgen een zacht afbreekstreepje, zodat grote koppen
+# op smalle schermen netjes afbreken in plaats van buiten beeld te lopen.
+SOFT_HYPHENS = {
+    "onderzoeksopstelling": "onderzoeks\u00adopstelling",
+    "Verwarmingssysteem": "Verwarmings\u00adsysteem",
+    "Energiesturing": "Energie\u00adsturing",
+}
+
+
+def title(text):
+    out = esc(text)
+    for word, hyphenated in SOFT_HYPHENS.items():
+        out = out.replace(word, hyphenated)
+    return out
+
+
 def parse(path):
     text = path.read_text(encoding="utf-8")
     meta = {}
@@ -61,7 +77,7 @@ def project_card(root, p, i, extra_class=""):
       {img_tag(root, p)}
       <span class="card-top"><span class="card-idx">{i:02d}</span><span class="card-tag">{esc(p["type"])}</span></span>
       <span class="card-body">
-        <span class="card-title">{esc(p["title"])}</span>
+        <span class="card-title">{title(p["title"])}</span>
         <span class="card-text">{esc(p["short"])}</span>
       </span>
       <span class="card-go" aria-hidden="true">→</span>
@@ -82,7 +98,7 @@ def project_index(root):
         <span class="pj-media">{img_tag(root, p)}</span>
         <span class="pj-main">
           <span class="pj-tag">{esc(p["type"])}</span>
-          <span class="pj-title">{esc(p["title"])}</span>
+          <span class="pj-title">{title(p["title"])}</span>
           <span class="pj-sub">{esc(p["subtitle"])}</span>
         </span>
         <ul class="pj-domains">{domains}</ul>
@@ -108,7 +124,7 @@ def project_context(root, i, p):
     nxt = PROJECTS[(i + 1) % len(PROJECTS)]
     status = f'<div><dt>Status</dt><dd>{esc(p["status"])}</dd></div>' if p.get("status") else ""
     return {
-        "p_title": esc(p["title"]),
+        "p_title": title(p["title"]),
         "p_type": esc(p["type"]),
         "p_subtitle": esc(p["subtitle"]),
         "p_index": f"{i + 1:02d}",
@@ -119,7 +135,7 @@ def project_context(root, i, p):
         "p_body": body,
         "p_gallery": gallery,
         "next_slug": nxt["slug"],
-        "next_title": esc(nxt["title"]),
+        "next_title": title(nxt["title"]),
         "next_hero": img_tag(root, nxt),
     }
 

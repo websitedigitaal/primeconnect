@@ -21,21 +21,6 @@
     ]
   },
   {
-    "slug": "physics-computing",
-    "title": "Physics Computing",
-    "type": "Contract R&D",
-    "short": "Fysische aansturing op basis van continue meetdata.",
-    "subtitle": "Fysische aansturing op basis van continue meetdata",
-    "image": "prototypes.webp",
-    "domains": ["Sensoren", "Fysische modellen", "Aansturing"],
-    "body": [
-      "Bij systemen waarin beweging, kracht of stroming een rol spelen, wordt het gedrag niet uitsluitend bepaald door software of elektronica, maar door de fysische eigenschappen van de componenten zelf. Kleine afwijkingen in mechanisch ontwerp of aansturing werken direct door in stabiliteit, nauwkeurigheid en levensduur. In veel toepassingen wordt dit gedrag pas zichtbaar tijdens gebruik, terwijl het in de ontwerpfase al bepalend is.",
-      "PrimeConnect ontwikkelde een systeem waarin meetdata en fysische modellen direct aan elkaar worden gekoppeld. Sensordata over krachten, beweging en stroming wordt continu verwerkt en getoetst aan modellen die het fysisch gedrag van de componenten beschrijven. Dit maakt het mogelijk om afwijkingen niet alleen te detecteren, maar te verklaren vanuit de onderliggende mechanismen. Op basis van deze analyse wordt de aansturing van het systeem bijgestuurd, onder andere via een stappenmotor voor nauwkeurige waterstroomregeling.",
-      "Het resultaat is een systeem waarin meting, modellering en aansturing een gesloten keten vormen. Systeemgedrag wordt voorspelbaar en controleerbaar, ook onder wisselende omstandigheden, zonder overdimensionering of onnodige complexiteit."
-    ],
-    "gallery": []
-  },
-  {
     "slug": "warmtepomp",
     "title": "Warmtepomp onderzoeksopstelling",
     "type": "Contract R&D",
@@ -52,23 +37,6 @@
     "gallery": [
       {"src": "proj-warmtepomp.webp", "caption": "Opstelling met compressor en warmtewisselaars"},
       {"src": "tile-fysica.webp", "caption": "Retourcircuit, meting en besturingskast"}
-    ]
-  },
-  {
-    "slug": "hems",
-    "title": "Home Energy Management System",
-    "type": "In-house",
-    "short": "Afstemming van energieopwekking en verbruik binnen de woning door middel van voorspelling en centrale aansturing.",
-    "subtitle": "Geïntegreerde energieaansturing voor de elektrificerende woning",
-    "image": "proj-hems.webp",
-    "domains": ["Voorspellingsmodellen", "Energiesystemen", "Aansturing"],
-    "body": [
-      "De elektrificatie van woningen neemt toe. Warmtepompen, laadpalen en zonnepanelen stellen hogere eisen aan de coördinatie van energiestromen binnen een gebouw. Bestaande HEMS-oplossingen benaderen dit primair vanuit de elektrische kant: opwekking en elektrisch verbruik worden op elkaar afgestemd, maar warm water blijft buiten beschouwing. Dit is een beperking, want de energievraag voor warm water is significant en wordt in een volledig geëlektrificeerde woning direct gedragen door het elektriciteitsnet.",
-      "PrimeConnect ontwikkelde een HEMS dat elektrisch verbruik en warmwaterbereiding als één geïntegreerd systeem benadert. Het systeem combineert drie voorspellingsmodules: zonneopbrengst op basis van weerdata en historische patronen, elektrisch verbruik op basis van gebruiksgedrag, en warmwaterverbruik op basis van gedragspatronen van de bewoners. Op basis van deze gecombineerde prognoses stuurt het systeem aangesloten apparaten aan, zodat beschikbare energie op het juiste moment wordt ingezet en piekbelasting op het net wordt beperkt.",
-      "Naarmate de energietransitie vordert en woningen verder elektrificeren, neemt de relevantie van warmwaterintegratie toe. Een HEMS dat alleen de elektrische kant beheert, optimaliseert een deel van het systeem. PrimeConnect optimaliseert het geheel."
-    ],
-    "gallery": [
-      {"src": "hems-grafieken.webp", "caption": "Evaluatie van de online voorspelling van zonneopbrengst", "fit": "contain"}
     ]
   },
   {
@@ -91,12 +59,44 @@
     ]
   },
   {
+    "slug": "slimme-energiesturing-s2",
+    "title": "Slimme Energiesturing met S2",
+    "type": "Contract R&D",
+    "short": "S2-implementatie voor PEBC en een Modbus-naar-S2-converter voor bestaande apparaten.",
+    "subtitle": "Open standaarden voor flexibel energieverbruik in huis",
+    "image": "proj-s2-converter.webp",
+    "domains": ["S2-protocol", "PEBC", "Modbus-converter"],
+    "body": [
+      "Het elektriciteitsnet staat steeds vaker onder druk. Door netcongestie en grotere schommelingen in vraag en aanbod wordt het belangrijker dat energieverbruik in huis slim en flexibel wordt afgestemd. Home Energy Management Systems (HEMS) spelen daarin een sleutelrol: ze coördineren laadpalen, warmtepompen, thuisbatterijen en omvormers, zodat zelf opgewekte stroom optimaal wordt benut en piekbelasting op het net wordt voorkomen. Maar een HEMS is alleen zo slim als de apparaten waarmee het kan communiceren, en daar wringt het: fabrikanten gebruiken uiteenlopende, vaak eigen protocollen, waardoor apparaten niet vanzelf samenwerken.",
+      "Om dit te doorbreken is ElaadNL, met steun van het ministerie van Klimaat en Groene Groei, het project Residential Flexibility gestart. Het doel is dat alle HEMS en slimme apparaten een beperkte set open standaarden ondersteunen, waaronder de Europese norm S2. Binnen dit project hebben wij de opdracht gekregen om de S2-implementatie voor PEBC (Power Envelope Based Control) te ontwikkelen. Bij PEBC stuurt het HEMS niet op een exact vermogen, maar geeft het grenzen mee waarbinnen een apparaat zelf mag opereren. Zo kunnen apparaten netlimieten respecteren zonder dat de gebruiker daar iets van merkt.",
+      "Een standaard heeft pas waarde als apparaten hem ook ondersteunen. Veel apparaten die nu al in huizen staan hebben wel een Modbus-aansluiting, maar spreken geen S2. Daarom hebben we naast het protocol ook een fysieke Modbus-naar-S2-converter ontwikkeld, in zowel een bedrade als een draadloze variant. Daarmee kunnen bestaande apparaten via hun Modbus-uitgang alsnog S2-compatibel worden gemaakt, zodat ook de huidige generatie apparaten kan bijdragen aan een stabiel energienet."
+    ],
+    "gallery": []
+  },
+  {
+    "slug": "hems",
+    "title": "Home Energy Management System",
+    "type": "In-house",
+    "short": "Afstemming van energieopwekking en verbruik binnen de woning door middel van voorspelling en centrale aansturing.",
+    "subtitle": "Geïntegreerde energieaansturing voor de elektrificerende woning",
+    "image": "proj-hems.webp",
+    "domains": ["Voorspellingsmodellen", "Energiesystemen", "Aansturing"],
+    "body": [
+      "De elektrificatie van woningen neemt toe. Warmtepompen, laadpalen en zonnepanelen stellen hogere eisen aan de coördinatie van energiestromen binnen een gebouw. Bestaande HEMS-oplossingen benaderen dit primair vanuit de elektrische kant: opwekking en elektrisch verbruik worden op elkaar afgestemd, maar warm water blijft buiten beschouwing. Dit is een beperking, want de energievraag voor warm water is significant en wordt in een volledig geëlektrificeerde woning direct gedragen door het elektriciteitsnet.",
+      "PrimeConnect ontwikkelde een HEMS dat elektrisch verbruik en warmwaterbereiding als één geïntegreerd systeem benadert. Het systeem combineert drie voorspellingsmodules: zonneopbrengst op basis van weerdata en historische patronen, elektrisch verbruik op basis van gebruiksgedrag, en warmwaterverbruik op basis van gedragspatronen van de bewoners. Op basis van deze gecombineerde prognoses stuurt het systeem aangesloten apparaten aan, zodat beschikbare energie op het juiste moment wordt ingezet en piekbelasting op het net wordt beperkt.",
+      "Naarmate de energietransitie vordert en woningen verder elektrificeren, neemt de relevantie van warmwaterintegratie toe. Een HEMS dat alleen de elektrische kant beheert, optimaliseert een deel van het systeem. PrimeConnect optimaliseert het geheel."
+    ],
+    "gallery": [
+      {"src": "hems-grafieken.webp", "caption": "Evaluatie van de online voorspelling van zonneopbrengst", "fit": "contain"}
+    ]
+  },
+  {
     "slug": "4g-dongle",
     "title": "4G-dongle",
     "type": "Contract R&D",
     "short": "Uitlezen, verwerken en versleuteld verzenden van energiedata via de P1-interface van slimme meters.",
     "subtitle": "P1-meterdata: uitlezen, verwerken en versleuteld overdragen",
-    "image": "pcb-macro.webp",
+    "image": "proj-4g-dongle.webp",
     "domains": ["P1-interface", "4G", "Versleuteling"],
     "body": [
       "Elke Nederlandse slimme meter beschikt over een P1-poort die continu energieverbruiksdata uitgeeft. Deze datastroom vereist betrouwbare lokale verwerking voordat de data overdraagbaar is naar externe systemen. Standaardmodules die hiervoor worden ingezet bevatten vaak componenten waarvan de interne werking niet volledig inzichtelijk is, wat de controle over verwerking en beveiliging van de volledige keten beperkt.",

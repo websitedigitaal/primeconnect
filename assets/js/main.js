@@ -254,36 +254,3 @@ filters.forEach((btn) => btn.addEventListener('click', () => {
     row.classList.toggle('is-hidden', type !== 'all' && row.dataset.type !== type);
   });
 }));
-
-/* ---------- Contactformulier ----------
-   Nog geen backend: na validatie opent het e-mailprogramma met een ingevuld bericht. */
-
-const form = document.getElementById('contact-form');
-if (form) {
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const status = form.querySelector('.form-status');
-    let ok = true;
-    form.querySelectorAll('[required]').forEach((input) => {
-      const valid = input.value.trim() !== '' && (input.type !== 'email' || /.+@.+\..+/.test(input.value));
-      input.closest('.field').classList.toggle('invalid', !valid);
-      if (!valid) ok = false;
-    });
-    if (!ok) {
-      status.textContent = 'Vul de gemarkeerde velden in.';
-      return;
-    }
-    const data = new FormData(form);
-    const lines = [
-      data.get('bericht'),
-      '',
-      `— ${data.get('naam')}${data.get('bedrijf') ? `, ${data.get('bedrijf')}` : ''}`,
-      data.get('email'),
-    ];
-    if (data.get('telefoon')) lines.push(data.get('telefoon'));
-    const body = lines.join('\n');
-    const subject = 'Contactaanvraag';
-    window.location.href = `mailto:info@primeconnect.nl?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    status.textContent = 'Uw e-mailprogramma wordt geopend met het bericht.';
-  });
-}
