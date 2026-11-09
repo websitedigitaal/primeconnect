@@ -6,11 +6,15 @@
   src/project.html      sjabloon voor elke projectpagina
   src/projects.json     projectdata
 
-Gebruik: python3 build.py
+Gebruik:
+  python3 build.py        bouwt de HTML
+  python3 build.py zip    bouwt de HTML en maakt primeconnect-site.zip om te uploaden
 """
 import html
 import json
 import re
+import sys
+import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).parent
@@ -172,5 +176,20 @@ def main():
         write(ROOT / "projecten" / f'{p["slug"]}.html', render(template, ctx))
 
 
+# Alles wat op de webserver moet; src/, build.py en .git blijven buiten de zip.
+PUBLISH = ["*.html", "assets/**/*", "projecten/*.html"]
+
+
+def make_zip():
+    target = ROOT / "primeconnect-site.zip"
+    files = sorted({f for pattern in PUBLISH for f in ROOT.glob(pattern) if f.is_file() and f.name != ".DS_Store"})
+    with zipfile.ZipFile(target, "w", zipfile.ZIP_DEFLATED) as z:
+        for f in files:
+            z.write(f, f.relative_to(ROOT))
+    print(f"Zip: {target.name} ({len(files)} bestanden, {target.stat().st_size / 1e6:.1f} MB)")
+
+
 if __name__ == "__main__":
     main()
+    if "zip" in sys.argv[1:]:
+        make_zip()
