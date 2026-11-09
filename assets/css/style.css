@@ -119,7 +119,15 @@ h1, h2, h3 { margin: 0; font-family: var(--f-display); font-weight: 650; font-va
   transition: transform .5s var(--ease), background .4s, color .4s, border-color .4s;
   border-bottom: 1px solid transparent;
 }
-.site-header.is-solid { background: rgba(5, 15, 22, .82); backdrop-filter: blur(14px) saturate(1.3); -webkit-backdrop-filter: blur(14px) saturate(1.3); border-color: var(--line-dark); }
+/* blur op een pseudo-element: backdrop-filter op de header zelf zou het fixed mobiele menu
+   in de header opsluiten (wordt dan het containing block) i.p.v. het hele scherm te vullen */
+.site-header::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  opacity: 0; transition: opacity .4s;
+  backdrop-filter: blur(14px) saturate(1.3); -webkit-backdrop-filter: blur(14px) saturate(1.3);
+}
+.site-header.is-solid::before { opacity: 1; }
+.site-header.is-solid { background: rgba(5, 15, 22, .82); border-color: var(--line-dark); }
 .site-header.on-light { color: var(--ink); }
 .site-header.on-light.is-solid { background: rgba(255, 255, 255, .88); border-color: var(--line-light); }
 .header-inner { display: flex; align-items: center; justify-content: space-between; height: 84px; }
@@ -719,6 +727,7 @@ h1, h2, h3 { margin: 0; font-family: var(--f-display); font-weight: 650; font-va
   .nav .nav-cta:hover { background: none; color: var(--signal); }
   body.menu-open { overflow: hidden; }
   body.menu-open .site-header { color: var(--on-dark); background: none; border-color: transparent; transform: none; }
+  body.menu-open .site-header::before { opacity: 0; }
   body.menu-open .brand .brand-dark { opacity: 0; }
   body.menu-open .brand .brand-light { opacity: 1; position: relative; z-index: 2; }
   .brand { z-index: 2; }
@@ -739,6 +748,8 @@ h1, h2, h3 { margin: 0; font-family: var(--f-display); font-weight: 650; font-va
   .roots { grid-template-columns: 1fr; }
   .gallery.g2 { grid-template-columns: 1fr; }
   .pd-hero-media img[data-fit="contain"] { padding: 96px 12% 34vh; object-position: center top; }
+  /* op telefoons staat de tekst over het midden van de foto: eerder donker maken voor leesbaarheid */
+  .pd-hero::before { background: linear-gradient(180deg, rgba(5, 15, 22, .6), rgba(5, 15, 22, .25) 25%, rgba(5, 15, 22, .9) 52%, rgba(5, 15, 22, .96)), rgba(15, 87, 125, .2); }
 }
 
 @media (max-width: 600px) {
@@ -750,7 +761,9 @@ h1, h2, h3 { margin: 0; font-family: var(--f-display); font-weight: 650; font-va
   .pd-title, .pd-next-title { hyphens: manual; }
   .bento .b1, .bento .b6 { grid-column: auto; }
   .section-top { flex-direction: column; align-items: flex-start; }
-  .actions .btn { flex: 1 1 100%; justify-content: center; }
+  /* onder elkaar, niet schermbreed (voelde als een cookiebanner); contact als gevulde knop */
+  .actions { flex-direction: column; align-items: flex-start; }
+  .hero-bottom .btn-outline { --bg: var(--signal); --bd: var(--signal); --fg: var(--night); --fill: var(--on-dark); }
   .footer-top { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; }
   .pj-row { grid-template-columns: 1fr; gap: 14px; }
